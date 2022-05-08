@@ -36,7 +36,7 @@ describe('Submit feedback use case', () => {
     expect(sendEmailSpy).toHaveBeenCalled();
   });
 
-  it('should not be able to submit a feedback without a type', async () => {
+  it('should be not able to submit a feedback without a type', async () => {
     await expect(
       submitFeedback.execute({
         type: typeNull,
@@ -46,7 +46,7 @@ describe('Submit feedback use case', () => {
     ).rejects.toThrow();
   });
 
-  it('should not be able to submit a feedback without a comment', async () => {
+  it('should be not able to submit a feedback without a comment', async () => {
     await expect(
       submitFeedback.execute({
         type: validType,
@@ -56,7 +56,7 @@ describe('Submit feedback use case', () => {
     ).rejects.toThrow();
   });
 
-  it('should not be able to submit a feedback with an invalid screenshot', async () => {
+  it('should be not able to submit a feedback with an invalid screenshot', async () => {
     await expect(
       submitFeedback.execute({
         type: validType,
